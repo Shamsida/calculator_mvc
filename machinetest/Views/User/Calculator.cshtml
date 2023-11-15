@@ -1,0 +1,32 @@
+﻿@model machinetest.Models.Domain.InputValue
+
+<h2>Future Value Calculator</h2>
+
+@using (Html.BeginForm("Calculate", "User", FormMethod.Post))
+{
+    <div>
+        <label asp-for="PV">PV:</label>
+        <input asp-for="PV" />
+        <span asp-validation-for="PV" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="R">R:</label>
+        <input asp-for="R" />
+        <span asp-validation-for="R" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="N">N:</label>
+        <input asp-for="N" />
+        <span asp-validation-for="N" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Calculate</button>
+}
+
+
+@if (ViewBag.Result != null)
+{
+    <p>Result: @ViewBag.Result</p>
+}
